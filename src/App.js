@@ -5,15 +5,18 @@ import SearchBar from "./components/SearchBar";
 
 function App() {
   const [data, setData] = useState([])
-    const handleSubmit = (term) => {
-      const data = searchImages(term)
-      console.log('dddd',data)
-      return data
-    }
+  
+  const handleSubmit = async (term) => {
+    
+    const resutl = await searchImages(term)
 
-    return <div>
-        <SearchBar onSubmit={handleSubmit} />
-        <ImageShow data={data}/>
-    </div>;
+    console.log('dddd', data)
+    setData(resutl)
+    return resutl
+  }
+  return <div>
+    <SearchBar onSubmit={handleSubmit} />
+    <ImageShow data={data} />
+  </div>;
 }
 export default App;

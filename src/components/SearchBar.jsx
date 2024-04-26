@@ -16,8 +16,8 @@ function SearchBar({ onSubmit }) {
   }
 
   return (
-    <form onSubmit={handleFormSubmit}>
-      <input value={term} onChange={handleChange} />
+    <form className="pt-4" onSubmit={handleFormSubmit}>
+      <input className="border" value={term} onChange={handleChange} />
     </form>
   )
 }
